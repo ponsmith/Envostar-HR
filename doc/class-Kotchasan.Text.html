@@ -215,7 +215,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Text.html#13-295" title="Go to source code">Kotchasan/Text.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Text.html#13-298" title="Go to source code">Kotchasan/Text.php</a>
 		<br>
 	</div>
 
@@ -491,7 +491,7 @@
 
 				<h4>Assert</h4>
 				<div class="list">
-						(" 0\n12   34\r\r6\t5ทดสอบ@#$&amp;{}!?+<em>- ") [==] '0123465ทดสอบ@#$&amp;{}!?+</em>-='<br>
+						(" 0\n12   34\r\r6\t5ทดสอบ@#$&amp;{}!?+<em>-=") [==] '0123465ทดสอบ@#$&amp;{}!?+</em>-='<br>
 				</div>
 
 
@@ -690,7 +690,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_topic">#</a>
-		<code><a href="source-class-Kotchasan.Text.html#235-248" title="Go to source code">topic</a>( <span>string <var>$text</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Text.html#235-251" title="Go to source code">topic</a>( <span>string <var>$text</var></span>, <span>boolean <var>$double_encode</var> = <span class="php-keyword1">true</span></span> )</code>
 
 		<div class="description short">
 			<p>แปลง tag และ ลบช่องว่างไม่เกิน 1 ช่อง ไม่ขึ้นบรรทัดใหม่
@@ -706,6 +706,8 @@
 				<div class="list"><dl>
 					<dt><var>$text</var></dt>
 					<dd></dd>
+					<dt><var>$double_encode</var></dt>
+					<dd>true (default) แปลง รหัส HTML เช่น &amp; เป็น &amp;amp;, false ไม่แปลง</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -717,6 +719,8 @@
 				<h4>Assert</h4>
 				<div class="list">
 						(' ทด\/สอบ'."\r\n\t".'<?php echo \'555\'?> ') [==] 'ทด&#92;/สอบ &lt;?php echo &#039;555&#039;?&gt;'<br>
+						('&nbsp;') [==] '&amp;nbsp;'<br>
+						('&nbsp;', false) [==] '&nbsp;'<br>
 				</div>
 
 
@@ -735,7 +739,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_unhtmlspecialchars">#</a>
-		<code><a href="source-class-Kotchasan.Text.html#250-260" title="Go to source code">unhtmlspecialchars</a>( <span>string <var>$text</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Text.html#253-263" title="Go to source code">unhtmlspecialchars</a>( <span>string <var>$text</var></span> )</code>
 
 		<div class="description short">
 			<p>แปลง htmlspecialchars กลับเป็นอักขระปกติ.</p>
@@ -774,7 +778,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_url">#</a>
-		<code><a href="source-class-Kotchasan.Text.html#262-278" title="Go to source code">url</a>( <span> <var>$text</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Text.html#265-281" title="Go to source code">url</a>( <span> <var>$text</var></span> )</code>
 
 		<div class="description short">
 			<p>แปลง tag ไม่แปลง &amp;
@@ -818,7 +822,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_username">#</a>
-		<code><a href="source-class-Kotchasan.Text.html#280-294" title="Go to source code">username</a>( <span>string <var>$text</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Text.html#283-297" title="Go to source code">username</a>( <span>string <var>$text</var></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นรับค่าสำหรับใช้เป็น username

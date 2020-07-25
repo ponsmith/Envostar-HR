@@ -215,7 +215,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.ArrayTool.html#13-389" title="Go to source code">Kotchasan/ArrayTool.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.ArrayTool.html#13-415" title="Go to source code">Kotchasan/ArrayTool.php</a>
 		<br>
 	</div>
 
@@ -880,6 +880,57 @@
 						(serialize(array(1, 2, 3))) [==] array(1, 2, 3)<br>
 						(serialize(array(1 => 'One', 2 => 'Two', 3 => 'Three')), array(3 => 3, 4 => 'Four'), true) [==] array(1 => 'One', 2 => 'Two', 3 => 'Three', 4 => 'Four')<br>
 						(serialize(array(1 => 'One', 2 => 'Two', 3 => 'Three')), array(3 => 3, 4 => 'Four'), false) [==] array(1 => 'One', 2 => 'Two', 3 => 3, 4 => 'Four')<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="in_array" id="_in_array">
+
+		<td class="attributes"><code>
+			 public static
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_in_array">#</a>
+		<code><a href="source-class-Kotchasan.ArrayTool.html#390-414" title="Go to source code">in_array</a>( <span>array <var>$needle</var></span>, <span>array <var>$haystack</var></span> )</code>
+
+		<div class="description short">
+			<p>ตรวจสอบว่ามี $needle ใน $haystack หรือไม่
+ถ้ามีคืนค่า true ถ้าไม่มีคืนค่า false</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ตรวจสอบว่ามี $needle ใน $haystack หรือไม่
+ถ้ามีคืนค่า true ถ้าไม่มีคืนค่า false</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$needle</var></dt>
+					<dd>แอเรย์ที่ต้องการตรวจสอบ</dd>
+					<dt><var>$haystack</var></dt>
+					<dd>แอเรย์ต้นฉบับ</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						(array(1, 2), array(1, 2)) [==] true<br>
+						(array(2), array(1, 2, 3)) [==] true<br>
+						(array(1, 2), array(3, 4)) [==] false<br>
+						(array(), array(3, 4)) [==] false<br>
+						(array(), array()) [==] false<br>
 				</div>
 
 

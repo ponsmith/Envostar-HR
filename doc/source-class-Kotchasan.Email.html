@@ -404,11 +404,11 @@
 </span><span id="134" class="l"><a href="#134">134: </a>            <span class="php-keyword1">foreach</span> (<span class="php-keyword2">explode</span>(<span class="php-quote">','</span>, <span class="php-var">$mailto</span>) <span class="php-keyword1">as</span> <span class="php-var">$email</span>) {
 </span><span id="135" class="l"><a href="#135">135: </a>                <span class="php-keyword1">if</span> (<span class="php-keyword2">preg_match</span>(<span class="php-quote">'/^(.*)&lt;(.*)&gt;$/'</span>, <span class="php-var">$email</span>, <span class="php-var">$match</span>)) {
 </span><span id="136" class="l"><a href="#136">136: </a>                    <span class="php-keyword1">if</span> (<span class="php-var">$mail</span>-&gt;ValidateAddress(<span class="php-var">$match</span>[<span class="php-num">1</span>])) {
-</span><span id="137" class="l"><a href="#137">137: </a>                        <span class="php-var">$mail</span>-&gt;AddAddress(<span class="php-var">$match</span>[<span class="php-num">1</span>], <span class="php-var">$match</span>[<span class="php-num">2</span>]);
+</span><span id="137" class="l"><a href="#137">137: </a>                        <span class="php-var">$mail</span>-&gt;addAddress(<span class="php-var">$match</span>[<span class="php-num">1</span>], <span class="php-var">$match</span>[<span class="php-num">2</span>]);
 </span><span id="138" class="l"><a href="#138">138: </a>                    }
 </span><span id="139" class="l"><a href="#139">139: </a>                } <span class="php-keyword1">else</span> {
 </span><span id="140" class="l"><a href="#140">140: </a>                    <span class="php-keyword1">if</span> (<span class="php-var">$mail</span>-&gt;ValidateAddress(<span class="php-var">$email</span>)) {
-</span><span id="141" class="l"><a href="#141">141: </a>                        <span class="php-var">$mail</span>-&gt;AddAddress(<span class="php-var">$email</span>, <span class="php-var">$email</span>);
+</span><span id="141" class="l"><a href="#141">141: </a>                        <span class="php-var">$mail</span>-&gt;addAddress(<span class="php-var">$email</span>, <span class="php-var">$email</span>);
 </span><span id="142" class="l"><a href="#142">142: </a>                    }
 </span><span id="143" class="l"><a href="#143">143: </a>                }
 </span><span id="144" class="l"><a href="#144">144: </a>                <span class="php-keyword1">if</span> (<span class="php-keyword1">false</span> === <span class="php-var">$mail</span>-&gt;send()) {

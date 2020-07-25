@@ -386,7 +386,7 @@
 </span></span><span id="116" class="l"><a href="#116">116: </a><span class="php-comment">     * แปลง &amp; &quot; ' &lt; &gt; \ { } เป็น HTML entities ใช้แทน htmlspecialchars() ของ PHP.
 </span></span><span id="117" class="l"><a href="#117">117: </a><span class="php-comment">     *
 </span></span><span id="118" class="l"><a href="#118">118: </a><span class="php-comment">     * @param string $text
-</span></span><span id="119" class="l"><a href="#119">119: </a><span class="php-comment">     * @param bool   $double_encode true (default) แปลง รหัส HTML เช่น &amp;amp; เป็น &amp;amp;amp;, false ไม่แปลง
+</span></span><span id="119" class="l"><a href="#119">119: </a><span class="php-comment">     * @param bool $double_encode true (default) แปลง รหัส HTML เช่น &amp;amp; เป็น &amp;amp;amp;, false ไม่แปลง
 </span></span><span id="120" class="l"><a href="#120">120: </a><span class="php-comment">     *
 </span></span><span id="121" class="l"><a href="#121">121: </a><span class="php-comment">     * @return string
 </span></span><span id="122" class="l"><a href="#122">122: </a><span class="php-comment">     */</span>
@@ -419,7 +419,7 @@
 </span><span id="149" class="l"><a href="#149">149: </a>    <span class="php-comment">/**
 </span></span><span id="150" class="l"><a href="#150">150: </a><span class="php-comment">     * รับค่าสำหรับ password อักขระทุกตัวไม่มีช่องว่าง.
 </span></span><span id="151" class="l"><a href="#151">151: </a><span class="php-comment">     *
-</span></span><span id="152" class="l"><a href="#152">152: </a><span class="php-comment">     * @assert (&quot; 0\n12   34\r\r6\t5ทดสอบ@#$&amp;{}!?+_- &quot;) [==] '0123465ทดสอบ@#$&amp;{}!?+_-='
+</span></span><span id="152" class="l"><a href="#152">152: </a><span class="php-comment">     * @assert (&quot; 0\n12   34\r\r6\t5ทดสอบ@#$&amp;{}!?+_-=&quot;) [==] '0123465ทดสอบ@#$&amp;{}!?+_-='
 </span></span><span id="153" class="l"><a href="#153">153: </a><span class="php-comment">     *
 </span></span><span id="154" class="l"><a href="#154">154: </a><span class="php-comment">     * @param string $text
 </span></span><span id="155" class="l"><a href="#155">155: </a><span class="php-comment">     *
@@ -507,63 +507,66 @@
 </span></span><span id="237" class="l"><a href="#237">237: </a><span class="php-comment">     * เช่นหัวข้อของบทความ
 </span></span><span id="238" class="l"><a href="#238">238: </a><span class="php-comment">     *
 </span></span><span id="239" class="l"><a href="#239">239: </a><span class="php-comment">     * @assert (' ทด\/สอบ'.&quot;\r\n\t&quot;.'&lt;?php echo \'555\'?&gt; ') [==] 'ทด&amp;#92;/สอบ &amp;lt;?php echo &amp;#039;555&amp;#039;?&amp;gt;'
-</span></span><span id="240" class="l"><a href="#240">240: </a><span class="php-comment">     *
-</span></span><span id="241" class="l"><a href="#241">241: </a><span class="php-comment">     * @param string $text
+</span></span><span id="240" class="l"><a href="#240">240: </a><span class="php-comment">     * @assert ('&amp;nbsp;') [==] '&amp;amp;nbsp;'
+</span></span><span id="241" class="l"><a href="#241">241: </a><span class="php-comment">     * @assert ('&amp;nbsp;', false) [==] '&amp;nbsp;'
 </span></span><span id="242" class="l"><a href="#242">242: </a><span class="php-comment">     *
-</span></span><span id="243" class="l"><a href="#243">243: </a><span class="php-comment">     * @return string
-</span></span><span id="244" class="l"><a href="#244">244: </a><span class="php-comment">     */</span>
-</span><span id="245" class="l"><a href="#245">245: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> topic(<span class="php-var">$text</span>)
-</span><span id="246" class="l"><a href="#246">246: </a>    {
-</span><span id="247" class="l"><a href="#247">247: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">trim</span>(<span class="php-keyword2">preg_replace</span>(<span class="php-quote">'/[\r\n\s\t]+/'</span>, <span class="php-quote">' '</span>, self::<span class="php-keyword2">htmlspecialchars</span>(<span class="php-var">$text</span>)));
-</span><span id="248" class="l"><a href="#248">248: </a>    }
-</span><span id="249" class="l"><a href="#249">249: </a>
-</span><span id="250" class="l"><a href="#250">250: </a>    <span class="php-comment">/**
-</span></span><span id="251" class="l"><a href="#251">251: </a><span class="php-comment">     * แปลง htmlspecialchars กลับเป็นอักขระปกติ.
-</span></span><span id="252" class="l"><a href="#252">252: </a><span class="php-comment">     *
-</span></span><span id="253" class="l"><a href="#253">253: </a><span class="php-comment">     * @param string $text
-</span></span><span id="254" class="l"><a href="#254">254: </a><span class="php-comment">     *
-</span></span><span id="255" class="l"><a href="#255">255: </a><span class="php-comment">     * @return string
-</span></span><span id="256" class="l"><a href="#256">256: </a><span class="php-comment">     */</span>
-</span><span id="257" class="l"><a href="#257">257: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> unhtmlspecialchars(<span class="php-var">$text</span>)
-</span><span id="258" class="l"><a href="#258">258: </a>    {
-</span><span id="259" class="l"><a href="#259">259: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">str_replace</span>(<span class="php-keyword1">array</span>(<span class="php-quote">'&amp;amp;'</span>, <span class="php-quote">'&amp;quot;'</span>, <span class="php-quote">'&amp;#039;'</span>, <span class="php-quote">'&amp;lt;'</span>, <span class="php-quote">'&amp;gt;'</span>, <span class="php-quote">'&amp;#92;'</span>, <span class="php-quote">'&amp;#x007B;'</span>, <span class="php-quote">'&amp;#x007D;'</span>), <span class="php-keyword1">array</span>(<span class="php-quote">'&amp;'</span>, <span class="php-quote">'&quot;'</span>, <span class="php-quote">&quot;'&quot;</span>, <span class="php-quote">'&lt;'</span>, <span class="php-quote">'&gt;'</span>, <span class="php-quote">'\\'</span>, <span class="php-quote">'{'</span>, <span class="php-quote">'}'</span>), <span class="php-var">$text</span>);
-</span><span id="260" class="l"><a href="#260">260: </a>    }
-</span><span id="261" class="l"><a href="#261">261: </a>
-</span><span id="262" class="l"><a href="#262">262: </a>    <span class="php-comment">/**
-</span></span><span id="263" class="l"><a href="#263">263: </a><span class="php-comment">     * แปลง tag ไม่แปลง &amp;amp;
-</span></span><span id="264" class="l"><a href="#264">264: </a><span class="php-comment">     * และลบช่องว่างหัวท้าย
-</span></span><span id="265" class="l"><a href="#265">265: </a><span class="php-comment">     * สำหรับ URL หรือ email.
-</span></span><span id="266" class="l"><a href="#266">266: </a><span class="php-comment">     *
-</span></span><span id="267" class="l"><a href="#267">267: </a><span class="php-comment">     * @assert (&quot; http://www.kotchasan.com?a=1&amp;b=2&amp;amp;c=3 &quot;) [==] 'http://www.kotchasan.com?a=1&amp;amp;b=2&amp;amp;c=3'
-</span></span><span id="268" class="l"><a href="#268">268: </a><span class="php-comment">     * @assert (&quot;javascript:alert('xxx')&quot;) [==] 'alertxxx'
-</span></span><span id="269" class="l"><a href="#269">269: </a><span class="php-comment">     * @assert (&quot;http://www.xxx.com/javascript/&quot;) [==] 'http://www.xxx.com/javascript/'
-</span></span><span id="270" class="l"><a href="#270">270: </a><span class="php-comment">     *
-</span></span><span id="271" class="l"><a href="#271">271: </a><span class="php-comment">     * @return string
-</span></span><span id="272" class="l"><a href="#272">272: </a><span class="php-comment">     */</span>
-</span><span id="273" class="l"><a href="#273">273: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> url(<span class="php-var">$text</span>)
-</span><span id="274" class="l"><a href="#274">274: </a>    {
-</span><span id="275" class="l"><a href="#275">275: </a>        <span class="php-var">$text</span> = <span class="php-keyword2">preg_replace</span>(<span class="php-quote">'/(^javascript:|[\(\)\'\&quot;]+)/'</span>, <span class="php-quote">''</span>, <span class="php-keyword2">trim</span>(<span class="php-var">$text</span>));
-</span><span id="276" class="l"><a href="#276">276: </a>
-</span><span id="277" class="l"><a href="#277">277: </a>        <span class="php-keyword1">return</span> self::<span class="php-keyword2">htmlspecialchars</span>(<span class="php-var">$text</span>, <span class="php-keyword1">false</span>);
-</span><span id="278" class="l"><a href="#278">278: </a>    }
+</span></span><span id="243" class="l"><a href="#243">243: </a><span class="php-comment">     * @param string $text
+</span></span><span id="244" class="l"><a href="#244">244: </a><span class="php-comment">     * @param bool $double_encode true (default) แปลง รหัส HTML เช่น &amp;amp; เป็น &amp;amp;amp;, false ไม่แปลง
+</span></span><span id="245" class="l"><a href="#245">245: </a><span class="php-comment">     *
+</span></span><span id="246" class="l"><a href="#246">246: </a><span class="php-comment">     * @return string
+</span></span><span id="247" class="l"><a href="#247">247: </a><span class="php-comment">     */</span>
+</span><span id="248" class="l"><a href="#248">248: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> topic(<span class="php-var">$text</span>, <span class="php-var">$double_encode</span> = <span class="php-keyword1">true</span>)
+</span><span id="249" class="l"><a href="#249">249: </a>    {
+</span><span id="250" class="l"><a href="#250">250: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">trim</span>(<span class="php-keyword2">preg_replace</span>(<span class="php-quote">'/[\r\n\s\t]+/'</span>, <span class="php-quote">' '</span>, self::<span class="php-keyword2">htmlspecialchars</span>(<span class="php-var">$text</span>, <span class="php-var">$double_encode</span>)));
+</span><span id="251" class="l"><a href="#251">251: </a>    }
+</span><span id="252" class="l"><a href="#252">252: </a>
+</span><span id="253" class="l"><a href="#253">253: </a>    <span class="php-comment">/**
+</span></span><span id="254" class="l"><a href="#254">254: </a><span class="php-comment">     * แปลง htmlspecialchars กลับเป็นอักขระปกติ.
+</span></span><span id="255" class="l"><a href="#255">255: </a><span class="php-comment">     *
+</span></span><span id="256" class="l"><a href="#256">256: </a><span class="php-comment">     * @param string $text
+</span></span><span id="257" class="l"><a href="#257">257: </a><span class="php-comment">     *
+</span></span><span id="258" class="l"><a href="#258">258: </a><span class="php-comment">     * @return string
+</span></span><span id="259" class="l"><a href="#259">259: </a><span class="php-comment">     */</span>
+</span><span id="260" class="l"><a href="#260">260: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> unhtmlspecialchars(<span class="php-var">$text</span>)
+</span><span id="261" class="l"><a href="#261">261: </a>    {
+</span><span id="262" class="l"><a href="#262">262: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">str_replace</span>(<span class="php-keyword1">array</span>(<span class="php-quote">'&amp;amp;'</span>, <span class="php-quote">'&amp;quot;'</span>, <span class="php-quote">'&amp;#039;'</span>, <span class="php-quote">'&amp;lt;'</span>, <span class="php-quote">'&amp;gt;'</span>, <span class="php-quote">'&amp;#92;'</span>, <span class="php-quote">'&amp;#x007B;'</span>, <span class="php-quote">'&amp;#x007D;'</span>), <span class="php-keyword1">array</span>(<span class="php-quote">'&amp;'</span>, <span class="php-quote">'&quot;'</span>, <span class="php-quote">&quot;'&quot;</span>, <span class="php-quote">'&lt;'</span>, <span class="php-quote">'&gt;'</span>, <span class="php-quote">'\\'</span>, <span class="php-quote">'{'</span>, <span class="php-quote">'}'</span>), <span class="php-var">$text</span>);
+</span><span id="263" class="l"><a href="#263">263: </a>    }
+</span><span id="264" class="l"><a href="#264">264: </a>
+</span><span id="265" class="l"><a href="#265">265: </a>    <span class="php-comment">/**
+</span></span><span id="266" class="l"><a href="#266">266: </a><span class="php-comment">     * แปลง tag ไม่แปลง &amp;amp;
+</span></span><span id="267" class="l"><a href="#267">267: </a><span class="php-comment">     * และลบช่องว่างหัวท้าย
+</span></span><span id="268" class="l"><a href="#268">268: </a><span class="php-comment">     * สำหรับ URL หรือ email.
+</span></span><span id="269" class="l"><a href="#269">269: </a><span class="php-comment">     *
+</span></span><span id="270" class="l"><a href="#270">270: </a><span class="php-comment">     * @assert (&quot; http://www.kotchasan.com?a=1&amp;b=2&amp;amp;c=3 &quot;) [==] 'http://www.kotchasan.com?a=1&amp;amp;b=2&amp;amp;c=3'
+</span></span><span id="271" class="l"><a href="#271">271: </a><span class="php-comment">     * @assert (&quot;javascript:alert('xxx')&quot;) [==] 'alertxxx'
+</span></span><span id="272" class="l"><a href="#272">272: </a><span class="php-comment">     * @assert (&quot;http://www.xxx.com/javascript/&quot;) [==] 'http://www.xxx.com/javascript/'
+</span></span><span id="273" class="l"><a href="#273">273: </a><span class="php-comment">     *
+</span></span><span id="274" class="l"><a href="#274">274: </a><span class="php-comment">     * @return string
+</span></span><span id="275" class="l"><a href="#275">275: </a><span class="php-comment">     */</span>
+</span><span id="276" class="l"><a href="#276">276: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> url(<span class="php-var">$text</span>)
+</span><span id="277" class="l"><a href="#277">277: </a>    {
+</span><span id="278" class="l"><a href="#278">278: </a>        <span class="php-var">$text</span> = <span class="php-keyword2">preg_replace</span>(<span class="php-quote">'/(^javascript:|[\(\)\'\&quot;]+)/'</span>, <span class="php-quote">''</span>, <span class="php-keyword2">trim</span>(<span class="php-var">$text</span>));
 </span><span id="279" class="l"><a href="#279">279: </a>
-</span><span id="280" class="l"><a href="#280">280: </a>    <span class="php-comment">/**
-</span></span><span id="281" class="l"><a href="#281">281: </a><span class="php-comment">     * ฟังก์ชั่นรับค่าสำหรับใช้เป็น username
-</span></span><span id="282" class="l"><a href="#282">282: </a><span class="php-comment">     * รองรับอีเมล ตัวเลข (หมายเลขโทรศัพท์) @ - _ . เท่านั้น.
-</span></span><span id="283" class="l"><a href="#283">283: </a><span class="php-comment">     *
-</span></span><span id="284" class="l"><a href="#284">284: </a><span class="php-comment">     * @assert (' ad_min@demo.com') [==] 'ad_min@demo.com'
-</span></span><span id="285" class="l"><a href="#285">285: </a><span class="php-comment">     * @assert ('012 3465') [==] '0123465'
+</span><span id="280" class="l"><a href="#280">280: </a>        <span class="php-keyword1">return</span> self::<span class="php-keyword2">htmlspecialchars</span>(<span class="php-var">$text</span>, <span class="php-keyword1">false</span>);
+</span><span id="281" class="l"><a href="#281">281: </a>    }
+</span><span id="282" class="l"><a href="#282">282: </a>
+</span><span id="283" class="l"><a href="#283">283: </a>    <span class="php-comment">/**
+</span></span><span id="284" class="l"><a href="#284">284: </a><span class="php-comment">     * ฟังก์ชั่นรับค่าสำหรับใช้เป็น username
+</span></span><span id="285" class="l"><a href="#285">285: </a><span class="php-comment">     * รองรับอีเมล ตัวเลข (หมายเลขโทรศัพท์) @ - _ . เท่านั้น.
 </span></span><span id="286" class="l"><a href="#286">286: </a><span class="php-comment">     *
-</span></span><span id="287" class="l"><a href="#287">287: </a><span class="php-comment">     * @param string $text
-</span></span><span id="288" class="l"><a href="#288">288: </a><span class="php-comment">     *
-</span></span><span id="289" class="l"><a href="#289">289: </a><span class="php-comment">     * @return string
-</span></span><span id="290" class="l"><a href="#290">290: </a><span class="php-comment">     */</span>
-</span><span id="291" class="l"><a href="#291">291: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> username(<span class="php-var">$text</span>)
-</span><span id="292" class="l"><a href="#292">292: </a>    {
-</span><span id="293" class="l"><a href="#293">293: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">preg_replace</span>(<span class="php-quote">'/[^a-zA-Z0-9@\.\-_]+/'</span>, <span class="php-quote">''</span>, <span class="php-var">$text</span>);
-</span><span id="294" class="l"><a href="#294">294: </a>    }
-</span><span id="295" class="l"><a href="#295">295: </a>}
-</span><span id="296" class="l"><a href="#296">296: </a></span></code></pre>
+</span></span><span id="287" class="l"><a href="#287">287: </a><span class="php-comment">     * @assert (' ad_min@demo.com') [==] 'ad_min@demo.com'
+</span></span><span id="288" class="l"><a href="#288">288: </a><span class="php-comment">     * @assert ('012 3465') [==] '0123465'
+</span></span><span id="289" class="l"><a href="#289">289: </a><span class="php-comment">     *
+</span></span><span id="290" class="l"><a href="#290">290: </a><span class="php-comment">     * @param string $text
+</span></span><span id="291" class="l"><a href="#291">291: </a><span class="php-comment">     *
+</span></span><span id="292" class="l"><a href="#292">292: </a><span class="php-comment">     * @return string
+</span></span><span id="293" class="l"><a href="#293">293: </a><span class="php-comment">     */</span>
+</span><span id="294" class="l"><a href="#294">294: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> username(<span class="php-var">$text</span>)
+</span><span id="295" class="l"><a href="#295">295: </a>    {
+</span><span id="296" class="l"><a href="#296">296: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">preg_replace</span>(<span class="php-quote">'/[^a-zA-Z0-9@\.\-_]+/'</span>, <span class="php-quote">''</span>, <span class="php-var">$text</span>);
+</span><span id="297" class="l"><a href="#297">297: </a>    }
+</span><span id="298" class="l"><a href="#298">298: </a>}
+</span><span id="299" class="l"><a href="#299">299: </a></span></code></pre>
 
 	<div id="footer">
 		kotchasan API documentation generated by <a href="http://apigen.org">ApiGen</a>

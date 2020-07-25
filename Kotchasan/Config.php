@@ -76,10 +76,7 @@ class Config
      */
     public $email_charset = 'utf-8';
     /**
-     * เลือกโปรแกรมที่ใช้ในการส่งอีเมลเป็น
-     * 0 PHP mail
-     * 1 PHPMailer+SMTP
-     * 2 PHPMailer+PHP mail
+     * เลือกโปรแกรมที่ใช้ในการส่งอีเมลเป็น PHPMailer.
      *
      * @var int
      */

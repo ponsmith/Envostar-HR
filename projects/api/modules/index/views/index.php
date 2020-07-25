@@ -32,8 +32,8 @@ class View extends \Kotchasan\View
         $mktime = time();
         // init Curl
         $ch = new \Kotchasan\Curl();
-        // call API get.php
-        $json = $ch->get(WEB_URL.'api.php', array('method' => 'getTime', 'id' => $mktime));
+        // call API Online
+        $json = $ch->get('https://projects.kotchasan.com/api/api.php', array('method' => 'getTime', 'id' => $mktime));
         // JSON to Array
         $array = json_decode($json, true);
         // เตรียมข้อมูลสำหรับใส่ข้อมูลลงใน template
@@ -41,7 +41,7 @@ class View extends \Kotchasan\View
             // เวลาปัจจุบัน ใส่ลงใน template
             '/{MKTIME}/' => $mktime,
             // ผลลัพท์ที่ได้จากการเรียก API
-            '/{RESULT}/' => $array['result'],
+            '/{RESULT}/' => isset($array['result']) ? $array['result'] : '',
         ));
         // โหลด template index.html
         $template = file_get_contents('modules/index/views/index.html');

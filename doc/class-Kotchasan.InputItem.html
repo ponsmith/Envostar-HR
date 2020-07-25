@@ -215,7 +215,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.InputItem.html#13-497" title="Go to source code">Kotchasan/InputItem.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.InputItem.html#13-500" title="Go to source code">Kotchasan/InputItem.php</a>
 		<br>
 	</div>
 
@@ -1102,7 +1102,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toDouble">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#373-384" title="Go to source code">toDouble</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#373-385" title="Go to source code">toDouble</a>( )</code>
 
 		<div class="description short">
 			<p>คืนค่าเป็น double.</p>
@@ -1123,6 +1123,7 @@
 				<div class="list">
 						create(0.454)->toDouble() [==] 0.454<br>
 						create(0.545)->toDouble() [==] 0.545<br>
+						create(15,362.454)->toDouble() [==] 15362.454<br>
 				</div>
 
 
@@ -1141,7 +1142,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toFloat">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#386-397" title="Go to source code">toFloat</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#387-398" title="Go to source code">toFloat</a>( )</code>
 
 		<div class="description short">
 			<p>คืนค่าเป็น float หรือ แอเรย์ของ float.</p>
@@ -1180,7 +1181,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toInt">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#399-410" title="Go to source code">toInt</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#400-411" title="Go to source code">toInt</a>( )</code>
 
 		<div class="description short">
 			<p>คืนค่าเป็น integer หรือ แอเรย์ของ integer.</p>
@@ -1219,7 +1220,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toObject">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#412-422" title="Go to source code">toObject</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#413-423" title="Go to source code">toObject</a>( )</code>
 
 		<div class="description short">
 			<p>คืนค่าเป็น Object หรือ แอเรย์ของ Object.</p>
@@ -1257,7 +1258,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toString">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#424-437" title="Go to source code">toString</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#425-438" title="Go to source code">toString</a>( )</code>
 
 		<div class="description short">
 			<p>คืนค่าเป็น string หรือ แอเรย์ของ string หรือ null.</p>
@@ -1298,7 +1299,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_topic">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#439-450" title="Go to source code">topic</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#440-453" title="Go to source code">topic</a>( <span>boolean <var>$double_encode</var> = <span class="php-keyword1">true</span></span> )</code>
 
 		<div class="description short">
 			<p>แปลง tag และ ลบช่องว่างไม่เกิน 1 ช่อง ไม่ขึ้นบรรทัดใหม่
@@ -1310,6 +1311,11 @@
 เช่นหัวข้อของบทความ</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$double_encode</var></dt>
+					<dd>true (default) แปลง รหัส HTML เช่น &amp; เป็น &amp;amp;, false ไม่แปลง</dd>
+				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
@@ -1338,7 +1344,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_url">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#452-466" title="Go to source code">url</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#455-469" title="Go to source code">url</a>( )</code>
 
 		<div class="description short">
 			<p>แปลง tag ไม่แปลง &amp;
@@ -1382,7 +1388,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_username">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#468-479" title="Go to source code">username</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#471-482" title="Go to source code">username</a>( )</code>
 
 		<div class="description short">
 			<p>รับค่าอีเมลและหมายเลขโทรศัพท์เท่านั้น.</p>
