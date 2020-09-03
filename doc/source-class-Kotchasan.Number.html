@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="robots" content="noindex">
 
-	<title>File Kotchasan/Number.php | kotchasan</title>
+	<title>File Kotchasan/Number.php | Kotchasan</title>
 
 	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
 
@@ -54,11 +54,6 @@
 				<li>
 					<a href="namespace-None.html">
 						None					</a>
-
-						</li>
-				<li>
-					<a href="namespace-PDF.html">
-						PDF					</a>
 
 						</li>
 				<li>
@@ -165,7 +160,7 @@
 				<li><a href="class-Kotchasan.Mime.html">Kotchasan\Mime</a></li>
 				<li><a href="class-Kotchasan.Model.html">Kotchasan\Model</a></li>
 				<li><a href="class-Kotchasan.Number.html">Kotchasan\Number</a></li>
-				<li><a href="class-Kotchasan.Object.html">Kotchasan\Object</a></li>
+				<li><a href="class-Kotchasan.ObjectTool.html">Kotchasan\ObjectTool</a></li>
 				<li><a href="class-Kotchasan.Orm.Field.html">Kotchasan\Orm\Field</a></li>
 				<li><a href="class-Kotchasan.Orm.Recordset.html">Kotchasan\Orm\Recordset</a></li>
 				<li><a href="class-Kotchasan.Password.html">Kotchasan\Password</a></li>
@@ -179,7 +174,6 @@
 				<li><a href="class-Kotchasan.Text.html">Kotchasan\Text</a></li>
 				<li><a href="class-Kotchasan.Validator.html">Kotchasan\Validator</a></li>
 				<li><a href="class-Kotchasan.View.html">Kotchasan\View</a></li>
-				<li><a href="class-PDF.FPDF.html">PDF\FPDF</a></li>
 				<li><a href="class-PHPMailer.html">PHPMailer</a></li>
 				<li><a href="class-Psr.Log.AbstractLogger.html">Psr\Log\AbstractLogger</a></li>
 				<li><a href="class-Psr.Log.LogLevel.html">Psr\Log\LogLevel</a></li>
@@ -207,7 +201,6 @@
 				<li><a href="class-Psr.Log.LoggerInterface.html">Psr\Log\LoggerInterface</a></li>
 				<li><a href="class-SeekableIterator.html">SeekableIterator</a></li>
 				<li><a href="class-Serializable.html">Serializable</a></li>
-				<li><a href="class-Throwable.html">Throwable</a></li>
 				<li><a href="class-Traversable.html">Traversable</a></li>
 			</ul>
 
@@ -218,11 +211,11 @@
 
 			<h3>Exceptions</h3>
 			<ul>
-				<li><a href="class-ErrorException.html">ErrorException</a></li>
 				<li><a href="class-Exception.html">Exception</a></li>
 				<li><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></li>
 				<li><a href="class-Kotchasan.Cache.Exception.html">Kotchasan\Cache\Exception</a></li>
 				<li><a href="class-Kotchasan.Database.Exception.html">Kotchasan\Database\Exception</a></li>
+				<li><a href="class-Kotchasan.InputItemException.html">Kotchasan\InputItemException</a></li>
 				<li><a href="class-LogicException.html">LogicException</a></li>
 				<li><a href="class-phpmailerException.html">phpmailerException</a></li>
 				<li><a href="class-RuntimeException.html">RuntimeException</a></li>
@@ -324,15 +317,44 @@
 </span><span id="54" class="l"><a href="#54">54: </a>    {
 </span><span id="55" class="l"><a href="#55">55: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">empty</span>(<span class="php-var">$divisor</span>) ? <span class="php-num">0</span> : <span class="php-var">$actual</span> / <span class="php-var">$divisor</span>;
 </span><span id="56" class="l"><a href="#56">56: </a>    }
-</span><span id="57" class="l"><a href="#57">57: </a>}
-</span><span id="58" class="l"><a href="#58">58: </a></span></code></pre>
+</span><span id="57" class="l"><a href="#57">57: </a>
+</span><span id="58" class="l"><a href="#58">58: </a>    <span class="php-comment">/**
+</span></span><span id="59" class="l"><a href="#59">59: </a><span class="php-comment">     * จัดรูปแบบตัวเลข รองรับการเติม วัน เดือน ปี
+</span></span><span id="60" class="l"><a href="#60">60: </a><span class="php-comment">     *
+</span></span><span id="61" class="l"><a href="#61">61: </a><span class="php-comment">     * @assert ('G%04d', 1) [==] &quot;G0001&quot;
+</span></span><span id="62" class="l"><a href="#62">62: </a><span class="php-comment">     * @assert ('G-%Y-%m-%d-%04d', 1) [==] &quot;G-63-08-19-0001&quot;
+</span></span><span id="63" class="l"><a href="#63">63: </a><span class="php-comment">     * @assert ('G-%y-%m-%d-%04d', 1) [==] &quot;G-20-08-19-0001&quot;
+</span></span><span id="64" class="l"><a href="#64">64: </a><span class="php-comment">     * @assert ('G-%YYYY-%m-%d-%04d', 1) [==] &quot;G-2563-08-19-0001&quot;
+</span></span><span id="65" class="l"><a href="#65">65: </a><span class="php-comment">     * @assert ('G-%yyyy-%m-%d-%04d', 1) [==] &quot;G-2020-08-19-0001&quot;
+</span></span><span id="66" class="l"><a href="#66">66: </a><span class="php-comment">     *
+</span></span><span id="67" class="l"><a href="#67">67: </a><span class="php-comment">     * @param string $format
+</span></span><span id="68" class="l"><a href="#68">68: </a><span class="php-comment">     * @param mixed $value
+</span></span><span id="69" class="l"><a href="#69">69: </a><span class="php-comment">     *
+</span></span><span id="70" class="l"><a href="#70">70: </a><span class="php-comment">     * @return string
+</span></span><span id="71" class="l"><a href="#71">71: </a><span class="php-comment">     */</span>
+</span><span id="72" class="l"><a href="#72">72: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <span class="php-keyword2">printf</span>(<span class="php-var">$format</span>, <span class="php-var">$value</span>)
+</span><span id="73" class="l"><a href="#73">73: </a>    {
+</span><span id="74" class="l"><a href="#74">74: </a>        <span class="php-var">$year_offset</span> = (int) Language::get(<span class="php-quote">'YEAR_OFFSET'</span>);
+</span><span id="75" class="l"><a href="#75">75: </a>        <span class="php-var">$y</span> = <span class="php-keyword2">date</span>(<span class="php-quote">'Y'</span>);
+</span><span id="76" class="l"><a href="#76">76: </a>        <span class="php-var">$Y</span> = <span class="php-var">$y</span> + <span class="php-var">$year_offset</span>;
+</span><span id="77" class="l"><a href="#77">77: </a>        <span class="php-var">$m</span> = <span class="php-keyword2">date</span>(<span class="php-quote">'m'</span>);
+</span><span id="78" class="l"><a href="#78">78: </a>        <span class="php-var">$d</span> = <span class="php-keyword2">date</span>(<span class="php-quote">'d'</span>);
+</span><span id="79" class="l"><a href="#79">79: </a>        <span class="php-var">$format</span> = <span class="php-keyword2">str_replace</span>(
+</span><span id="80" class="l"><a href="#80">80: </a>            <span class="php-keyword1">array</span>(<span class="php-quote">'%YY'</span>, <span class="php-quote">'%yy'</span>, <span class="php-quote">'%Y'</span>, <span class="php-quote">'%y'</span>, <span class="php-quote">'%M'</span>, <span class="php-quote">'%m'</span>, <span class="php-quote">'%D'</span>, <span class="php-quote">'%d'</span>),
+</span><span id="81" class="l"><a href="#81">81: </a>            <span class="php-keyword1">array</span>(<span class="php-var">$Y</span>, <span class="php-var">$y</span>, <span class="php-keyword2">substr</span>(<span class="php-var">$Y</span>, <span class="php-num">2</span>, <span class="php-num">2</span>), <span class="php-keyword2">substr</span>(<span class="php-var">$y</span>, <span class="php-num">2</span>, <span class="php-num">2</span>), <span class="php-var">$m</span>, <span class="php-var">$m</span>, <span class="php-var">$d</span>, <span class="php-var">$d</span>),
+</span><span id="82" class="l"><a href="#82">82: </a>            <span class="php-var">$format</span>);
+</span><span id="83" class="l"><a href="#83">83: </a>
+</span><span id="84" class="l"><a href="#84">84: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">sprintf</span>(<span class="php-var">$format</span>, <span class="php-var">$value</span>);
+</span><span id="85" class="l"><a href="#85">85: </a>    }
+</span><span id="86" class="l"><a href="#86">86: </a>}
+</span><span id="87" class="l"><a href="#87">87: </a></span></code></pre>
 
 	<div id="footer">
-		kotchasan API documentation generated by <a href="http://apigen.org">ApiGen</a>
+		Kotchasan API documentation generated by <a href="http://apigen.org">ApiGen</a>
 	</div>
 </div>
 </div>
 <script src="resources/combined.js?c6c5d4c813dfe94e72641584f94c976e1af856b8"></script>
-<script src="elementlist.js?83ca167cf6dc9413dd38fd3f738f89ec855e1101"></script>
+<script src="elementlist.js?b5dca18886850500697183249f7940bfb08192ef"></script>
 </body>
 </html>

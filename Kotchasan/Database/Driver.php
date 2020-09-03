@@ -233,14 +233,23 @@ abstract class Driver extends Query
      *
      * @param array $sqls
      * @param array $values ถ้าระบุตัวแปรนี้จะเป็นการบังคับใช้คำสั่ง prepare แทน query
+     * @param bool $debugger แสดงผล Query
      *
      * @return mixed
      */
-    public function execQuery($sqls, $values = array())
+    public function execQuery($sqls, $values = array(), $debugger = false)
     {
         $sql = $this->makeQuery($sqls);
         if (isset($sqls['values'])) {
             $values = ArrayTool::replace($sqls['values'], $values);
+        }
+        if ($debugger) {
+            echo '<pre>';
+            echo $sql;
+            if (!empty($values)) {
+                echo var_export($values, true);
+            }
+            echo '</pre>';
         }
         if ($sqls['function'] == 'customQuery') {
             $result = $this->customQuery($sql, true, $values);
@@ -375,7 +384,7 @@ abstract class Driver extends Query
 
     /**
      * ฟังก์ชั่นเพิ่มข้อมูลใหม่ลงในตาราง
-     * ถ้ามีข้อมูลเดิมอยู่แล้วจะเป็นการอัปเดต
+     * ถ้ามีข้อมูลเดิมอยู่แล้วจะเป็นการอัพเดต
      * (ข้อมูลเดิมตาม KEY ที่เป็น UNIQUE)
      * insert คืนค่า id ที่เพิ่ม
      * update คืนค่า 0
@@ -499,7 +508,7 @@ abstract class Driver extends Query
     abstract public function update($table_name, $condition, $save);
 
     /**
-     * อัปเดตข้อมูลทุก record
+     * อัพเดตข้อมูลทุก record
      * สำเร็จ คืนค่า true, ผิดพลาด คืนค่า false.
      *
      * @param string $table_name table name

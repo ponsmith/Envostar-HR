@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class Kotchasan\InputItem | kotchasan</title>
+	<title>Class Kotchasan\InputItem | Kotchasan</title>
 
 	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
 
@@ -53,11 +53,6 @@
 				<li>
 					<a href="namespace-None.html">
 						None					</a>
-
-						</li>
-				<li>
-					<a href="namespace-PDF.html">
-						PDF					</a>
 
 						</li>
 				<li>
@@ -137,7 +132,7 @@
 				<li><a href="class-Kotchasan.Mime.html">Mime</a></li>
 				<li><a href="class-Kotchasan.Model.html">Model</a></li>
 				<li><a href="class-Kotchasan.Number.html">Number</a></li>
-				<li><a href="class-Kotchasan.Object.html">Object</a></li>
+				<li><a href="class-Kotchasan.ObjectTool.html">ObjectTool</a></li>
 				<li><a href="class-Kotchasan.Password.html">Password</a></li>
 				<li><a href="class-Kotchasan.Pdf.html">Pdf</a></li>
 				<li><a href="class-Kotchasan.Province.html">Province</a></li>
@@ -153,6 +148,10 @@
 
 
 
+			<h3>Exceptions</h3>
+			<ul>
+				<li><a href="class-Kotchasan.InputItemException.html">InputItemException</a></li>
+			</ul>
 
 
 		</div>
@@ -194,7 +193,7 @@
 
 
 	<div class="description">
-	<p>Input Object.</p>
+	<p>Input Object</p>
 	</div>
 
 
@@ -215,7 +214,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.InputItem.html#13-500" title="Go to source code">Kotchasan/InputItem.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.InputItem.html#13-538" title="Go to source code">Kotchasan/InputItem.php</a>
 		<br>
 	</div>
 
@@ -238,11 +237,11 @@
 		<code><a href="source-class-Kotchasan.InputItem.html#35-45" title="Go to source code">__construct</a>( <span>mixed <var>$value</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
-			<p>Class Constructer.</p>
+			<p>Class Constructer</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Class Constructer.</p>
+			<p>Class Constructer</p>
 
 
 				<h4>Parameters</h4>
@@ -275,11 +274,11 @@
 		<code><a href="source-class-Kotchasan.InputItem.html#47-55" title="Go to source code">all</a>( )</code>
 
 		<div class="description short">
-			<p>คืนค่าตามข้อมูลที่ส่งมา.</p>
+			<p>คืนค่าตามข้อมูลที่ส่งมา</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>คืนค่าตามข้อมูลที่ส่งมา.</p>
+			<p>คืนค่าตามข้อมูลที่ส่งมา</p>
 
 
 
@@ -348,11 +347,11 @@
 		<code><a href="source-class-Kotchasan.InputItem.html#70-81" title="Go to source code">create</a>( <span>mixed <var>$value</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
-			<p>สร้าง Object.</p>
+			<p>สร้าง Object</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>สร้าง Object.</p>
+			<p>สร้าง Object</p>
 
 
 				<h4>Parameters</h4>
@@ -379,7 +378,7 @@
 		<td class="attributes"><code>
 			 public 
 
-			string|array
+			string|array|null
 			
 			</code>
 		</td>
@@ -406,7 +405,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					string|array
+					string|array|null
 				</div>
 
 
@@ -432,7 +431,7 @@
 		<td class="attributes"><code>
 			 public 
 
-			string|array
+			string|array|null
 			
 			</code>
 		</td>
@@ -459,7 +458,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					string|array
+					string|array|null
 				</div>
 
 
@@ -489,7 +488,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_description">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#146-187" title="Go to source code">description</a>( <span>integer <var>$len</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#146-188" title="Go to source code">description</a>( <span>integer <var>$len</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
 			<p>ลบ tag, BBCode ออก ให้เหลือแต่ข้อความล้วน
@@ -529,6 +528,7 @@
 						create('ทดสอบ<!--WIDGET_XXX-->')->description() [==] 'ทดสอบ'<br>
 						create('ท&amp;ด&quot;\&nbsp;/<strong>ส-อ+บ')->description() [==] 'ท ด \ /</strong>ส-อ+บ'<br>
 						create('ภาคภูมิ')->description(2) [==] 'ภา'<br>
+						create('U1.username ทดสอบภาษาไทย')->description(5) [throws] \Kotchasan\InputItemException<br>
 				</div>
 
 
@@ -547,7 +547,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_detail">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#189-200" title="Go to source code">detail</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#190-206" title="Go to source code">detail</a>( )</code>
 
 		<div class="description short">
 			<p>ลบ PHP tag และแปลง \ { } สำหรับใช้รับข้อมูลจาก editor
@@ -569,6 +569,7 @@
 				<h4>Assert</h4>
 				<div class="list">
 						create('{ทด\/สอบ<?php echo "555"?>}')->detail() [==] '&#x007B;ทด&#92;/สอบ&#x007D;'<br>
+						create('<?=555?>U1.username')->detail() [throws] \Kotchasan\InputItemException<br>
 				</div>
 
 
@@ -587,7 +588,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_exists">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#202-211" title="Go to source code">exists</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#208-217" title="Go to source code">exists</a>( )</code>
 
 		<div class="description short">
 			<p>ตรวจสอบว่ามีตัวแปรส่งมาหรือไม่
@@ -623,14 +624,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_filter">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#213-227" title="Go to source code">filter</a>( <span>string <var>$format</var></span>, <span>string <var>$replace</var> = <span class="php-quote">''</span></span> )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#219-234" title="Go to source code">filter</a>( <span>string <var>$format</var></span>, <span>string <var>$replace</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
-			<p>ฟังก์ชั่นแทนที่อักขระที่ไม่ต้องการ.</p>
+			<p>ฟังก์ชั่นแทนที่อักขระที่ไม่ต้องการ</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นแทนที่อักขระที่ไม่ต้องการ.</p>
+			<p>ฟังก์ชั่นแทนที่อักขระที่ไม่ต้องการ</p>
 
 
 				<h4>Parameters</h4>
@@ -651,6 +652,7 @@
 				<div class="list">
 						create('admin,1234')->filter('0-9a-zA-Z,') [==] 'admin,1234'<br>
 						create('adminกข,12ฟ34')->filter('0-9a-zA-Z,') [==] 'admin,1234'<br>
+						create('U1.username')->filter('a-zA-Z0-9&#46;') [throws] \Kotchasan\InputItemException<br>
 				</div>
 
 
@@ -669,7 +671,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_isCookie">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#229-238" title="Go to source code">isCookie</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#236-245" title="Go to source code">isCookie</a>( )</code>
 
 		<div class="description short">
 			<p>ตรวจสอบว่ามาจาก $_COOKIE หรือไม่
@@ -705,7 +707,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_isGet">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#240-249" title="Go to source code">isGet</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#247-256" title="Go to source code">isGet</a>( )</code>
 
 		<div class="description short">
 			<p>ตรวจสอบว่ามาจาก $_GET หรือไม่
@@ -741,7 +743,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_isPost">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#251-260" title="Go to source code">isPost</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#258-267" title="Go to source code">isPost</a>( )</code>
 
 		<div class="description short">
 			<p>ตรวจสอบว่ามาจาก $_POST หรือไม่
@@ -777,7 +779,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_isSession">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#262-271" title="Go to source code">isSession</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#269-278" title="Go to source code">isSession</a>( )</code>
 
 		<div class="description short">
 			<p>ตรวจสอบว่ามาจาก $_SESSION หรือไม่
@@ -813,7 +815,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_keywords">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#273-289" title="Go to source code">keywords</a>( <span>integer <var>$len</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#280-297" title="Go to source code">keywords</a>( <span>integer <var>$len</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
 			<p>ลบ tags และ ลบช่องว่างไม่เกิน 1 ช่อง ไม่ขึ้นบรรทัดใหม่
@@ -842,6 +844,7 @@
 				<h4>Assert</h4>
 				<div class="list">
 						create("<b>ทด</b>   \r\nสอบ")->keywords() [==] 'ทด สอบ'<br>
+						create('<b>U1.username</b> ทดสอบ')->keywords(5) [throws] \Kotchasan\InputItemException<br>
 				</div>
 
 
@@ -860,7 +863,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_number">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#291-303" title="Go to source code">number</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#299-311" title="Go to source code">number</a>( )</code>
 
 		<div class="description short">
 			<p>ตัวเลข หรือ แอเรย์ของ ตัวเลข</p>
@@ -900,14 +903,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_password">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#305-313" title="Go to source code">password</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#313-321" title="Go to source code">password</a>( )</code>
 
 		<div class="description short">
-			<p>รับค่าสำหรับ password อักขระทุกตัวไม่มีช่องว่าง.</p>
+			<p>รับค่าสำหรับ password อักขระทุกตัวไม่มีช่องว่าง</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>รับค่าสำหรับ password อักขระทุกตัวไม่มีช่องว่าง.</p>
+			<p>รับค่าสำหรับ password อักขระทุกตัวไม่มีช่องว่าง</p>
 
 
 
@@ -934,7 +937,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_quote">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#315-327" title="Go to source code">quote</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#323-336" title="Go to source code">quote</a>( )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นรับข้อความ ยอมรับอักขระทั้งหมด
@@ -958,6 +961,7 @@
 				<h4>Assert</h4>
 				<div class="list">
 						create("ทด'สอบ")->quote() [==] "ทด&#39;สอบ"<br>
+						create(' U1.username ')->quote() [throws] \Kotchasan\InputItemException<br>
 				</div>
 
 
@@ -976,7 +980,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_text">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#329-341" title="Go to source code">text</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#338-351" title="Go to source code">text</a>( )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่น แปลง &amp; " ' &lt; > \ เป็น HTML entities
@@ -1000,6 +1004,7 @@
 				<h4>Assert</h4>
 				<div class="list">
 						create(" ทด\/สอบ<?php echo '555'?> ")->text() [==] 'ทด&#92;/สอบ&lt;?php echo &#039;555&#039;?&gt;'<br>
+						create('U1.username')->text() [throws] \Kotchasan\InputItemException<br>
 				</div>
 
 
@@ -1018,7 +1023,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_textarea">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#343-355" title="Go to source code">textarea</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#353-370" title="Go to source code">textarea</a>( )</code>
 
 		<div class="description short">
 			<p>แปลง &lt; > \ { } เป็น HTML entities และแปลง \n เป็น <br>
@@ -1042,6 +1047,7 @@
 				<h4>Assert</h4>
 				<div class="list">
 						create("ทด\/สอบ\n<?php echo '$555'?>")->textarea() [==] "ทด&#92;/สอบ\n&lt;?php echo '&#36;555'?&gt;"<br>
+						create('U1.username')->textarea() [throws] \Kotchasan\InputItemException<br>
 				</div>
 
 
@@ -1060,7 +1066,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toBoolean">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#357-371" title="Go to source code">toBoolean</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#372-386" title="Go to source code">toBoolean</a>( )</code>
 
 		<div class="description short">
 			<p>คืนค่าเป็น boolean หรือ แอเรย์ของ boolean.</p>
@@ -1102,14 +1108,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toDouble">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#373-385" title="Go to source code">toDouble</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#388-400" title="Go to source code">toDouble</a>( )</code>
 
 		<div class="description short">
-			<p>คืนค่าเป็น double.</p>
+			<p>คืนค่าเป็น double</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>คืนค่าเป็น double.</p>
+			<p>คืนค่าเป็น double</p>
 
 
 
@@ -1123,7 +1129,7 @@
 				<div class="list">
 						create(0.454)->toDouble() [==] 0.454<br>
 						create(0.545)->toDouble() [==] 0.545<br>
-						create(15,362.454)->toDouble() [==] 15362.454<br>
+						create('15,362.454')->toDouble() [==] 15362.454<br>
 				</div>
 
 
@@ -1142,14 +1148,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toFloat">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#387-398" title="Go to source code">toFloat</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#402-413" title="Go to source code">toFloat</a>( )</code>
 
 		<div class="description short">
-			<p>คืนค่าเป็น float หรือ แอเรย์ของ float.</p>
+			<p>คืนค่าเป็น float หรือ แอเรย์ของ float</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>คืนค่าเป็น float หรือ แอเรย์ของ float.</p>
+			<p>คืนค่าเป็น float หรือ แอเรย์ของ float</p>
 
 
 
@@ -1181,14 +1187,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toInt">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#400-411" title="Go to source code">toInt</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#415-426" title="Go to source code">toInt</a>( )</code>
 
 		<div class="description short">
-			<p>คืนค่าเป็น integer หรือ แอเรย์ของ integer.</p>
+			<p>คืนค่าเป็น integer หรือ แอเรย์ของ integer</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>คืนค่าเป็น integer หรือ แอเรย์ของ integer.</p>
+			<p>คืนค่าเป็น integer หรือ แอเรย์ของ integer</p>
 
 
 
@@ -1220,14 +1226,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toObject">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#413-423" title="Go to source code">toObject</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#428-438" title="Go to source code">toObject</a>( )</code>
 
 		<div class="description short">
-			<p>คืนค่าเป็น Object หรือ แอเรย์ของ Object.</p>
+			<p>คืนค่าเป็น Object หรือ แอเรย์ของ Object</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>คืนค่าเป็น Object หรือ แอเรย์ของ Object.</p>
+			<p>คืนค่าเป็น Object หรือ แอเรย์ของ Object</p>
 
 
 
@@ -1258,14 +1264,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toString">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#425-438" title="Go to source code">toString</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#440-454" title="Go to source code">toString</a>( )</code>
 
 		<div class="description short">
-			<p>คืนค่าเป็น string หรือ แอเรย์ของ string หรือ null.</p>
+			<p>คืนค่าเป็น string หรือ แอเรย์ของ string หรือ null</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>คืนค่าเป็น string หรือ แอเรย์ของ string หรือ null.</p>
+			<p>คืนค่าเป็น string หรือ แอเรย์ของ string หรือ null</p>
 
 
 
@@ -1281,6 +1287,7 @@
 						create('1')->toString() [==] '1'<br>
 						create(1)->toString() [==] '1'<br>
 						create(null)->toString() [==] null<br>
+						create('U1.username')->toString() [throws] \Kotchasan\InputItemException<br>
 				</div>
 
 
@@ -1299,7 +1306,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_topic">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#440-453" title="Go to source code">topic</a>( <span>boolean <var>$double_encode</var> = <span class="php-keyword1">true</span></span> )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#456-470" title="Go to source code">topic</a>( <span>boolean <var>$double_encode</var> = <span class="php-keyword1">true</span></span> )</code>
 
 		<div class="description short">
 			<p>แปลง tag และ ลบช่องว่างไม่เกิน 1 ช่อง ไม่ขึ้นบรรทัดใหม่
@@ -1326,6 +1333,7 @@
 				<h4>Assert</h4>
 				<div class="list">
 						create(' ทด\/สอบ'."\r\n\t".'<?php echo \'555\'?> ')->topic() [==] 'ทด&#92;/สอบ &lt;?php echo &#039;555&#039;?&gt;'<br>
+						create('U1.username')->topic() [throws] \Kotchasan\InputItemException<br>
 				</div>
 
 
@@ -1344,7 +1352,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_url">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#455-469" title="Go to source code">url</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#472-487" title="Go to source code">url</a>( )</code>
 
 		<div class="description short">
 			<p>แปลง tag ไม่แปลง &amp;
@@ -1370,6 +1378,7 @@
 						create(" http://www.kotchasan.com?a=1&amp;b=2&amp;c=3 ")->url() [==] 'http://www.kotchasan.com?a=1&amp;b=2&amp;c=3'<br>
 						create("javascript:alert('xxx')")->url() [==] 'alertxxx'<br>
 						create("http://www.xxx.com/javascript/")->url() [==] 'http://www.xxx.com/javascript/'<br>
+						create('U1.username')->url() [throws] \Kotchasan\InputItemException<br>
 				</div>
 
 
@@ -1388,14 +1397,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_username">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#471-482" title="Go to source code">username</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#489-501" title="Go to source code">username</a>( )</code>
 
 		<div class="description short">
-			<p>รับค่าอีเมลและหมายเลขโทรศัพท์เท่านั้น.</p>
+			<p>รับค่าอีเมลและหมายเลขโทรศัพท์เท่านั้น</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>รับค่าอีเมลและหมายเลขโทรศัพท์เท่านั้น.</p>
+			<p>รับค่าอีเมลและหมายเลขโทรศัพท์เท่านั้น</p>
 
 
 
@@ -1409,6 +1418,7 @@
 				<div class="list">
 						create(' admin@demo.com')->username() [==] 'admin@demo.com'<br>
 						create('012 3465')->username() [==] '0123465'<br>
+						create('U1.username')->username() [throws] \Kotchasan\InputItemException<br>
 				</div>
 
 
@@ -1465,11 +1475,11 @@
 				<a href="source-class-Kotchasan.InputItem.html#28-33" title="Go to source code"><var>$value</var></a>
 
 			<div class="description short">
-				<p>ตัวแปรเก็บค่าของ Object.</p>
+				<p>ตัวแปรเก็บค่าของ Object</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>ตัวแปรเก็บค่าของ Object.</p>
+				<p>ตัวแปรเก็บค่าของ Object</p>
 
 			</div>
 		</td>
@@ -1490,7 +1500,7 @@
 </div>
 
 	<div id="footer">
-		kotchasan API documentation generated by <a href="http://apigen.org">ApiGen</a>
+		Kotchasan API documentation generated by <a href="http://apigen.org">ApiGen</a>
 	</div>
 </div>
 </div>

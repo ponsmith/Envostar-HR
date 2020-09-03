@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="robots" content="noindex">
 
-	<title>File Kotchasan/Database/Sql.php | kotchasan</title>
+	<title>File Kotchasan/Database/Sql.php | Kotchasan</title>
 
 	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
 
@@ -54,11 +54,6 @@
 				<li>
 					<a href="namespace-None.html">
 						None					</a>
-
-						</li>
-				<li>
-					<a href="namespace-PDF.html">
-						PDF					</a>
 
 						</li>
 				<li>
@@ -165,7 +160,7 @@
 				<li><a href="class-Kotchasan.Mime.html">Kotchasan\Mime</a></li>
 				<li><a href="class-Kotchasan.Model.html">Kotchasan\Model</a></li>
 				<li><a href="class-Kotchasan.Number.html">Kotchasan\Number</a></li>
-				<li><a href="class-Kotchasan.Object.html">Kotchasan\Object</a></li>
+				<li><a href="class-Kotchasan.ObjectTool.html">Kotchasan\ObjectTool</a></li>
 				<li><a href="class-Kotchasan.Orm.Field.html">Kotchasan\Orm\Field</a></li>
 				<li><a href="class-Kotchasan.Orm.Recordset.html">Kotchasan\Orm\Recordset</a></li>
 				<li><a href="class-Kotchasan.Password.html">Kotchasan\Password</a></li>
@@ -179,7 +174,6 @@
 				<li><a href="class-Kotchasan.Text.html">Kotchasan\Text</a></li>
 				<li><a href="class-Kotchasan.Validator.html">Kotchasan\Validator</a></li>
 				<li><a href="class-Kotchasan.View.html">Kotchasan\View</a></li>
-				<li><a href="class-PDF.FPDF.html">PDF\FPDF</a></li>
 				<li><a href="class-PHPMailer.html">PHPMailer</a></li>
 				<li><a href="class-Psr.Log.AbstractLogger.html">Psr\Log\AbstractLogger</a></li>
 				<li><a href="class-Psr.Log.LogLevel.html">Psr\Log\LogLevel</a></li>
@@ -207,7 +201,6 @@
 				<li><a href="class-Psr.Log.LoggerInterface.html">Psr\Log\LoggerInterface</a></li>
 				<li><a href="class-SeekableIterator.html">SeekableIterator</a></li>
 				<li><a href="class-Serializable.html">Serializable</a></li>
-				<li><a href="class-Throwable.html">Throwable</a></li>
 				<li><a href="class-Traversable.html">Traversable</a></li>
 			</ul>
 
@@ -218,11 +211,11 @@
 
 			<h3>Exceptions</h3>
 			<ul>
-				<li><a href="class-ErrorException.html">ErrorException</a></li>
 				<li><a href="class-Exception.html">Exception</a></li>
 				<li><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></li>
 				<li><a href="class-Kotchasan.Cache.Exception.html">Kotchasan\Cache\Exception</a></li>
 				<li><a href="class-Kotchasan.Database.Exception.html">Kotchasan\Database\Exception</a></li>
+				<li><a href="class-Kotchasan.InputItemException.html">Kotchasan\InputItemException</a></li>
 				<li><a href="class-LogicException.html">LogicException</a></li>
 				<li><a href="class-phpmailerException.html">phpmailerException</a></li>
 				<li><a href="class-RuntimeException.html">RuntimeException</a></li>
@@ -901,7 +894,7 @@
 </span><span id="631" class="l"><a href="#631">631: </a>            <span class="php-comment">// QueryBuilder</span>
 </span><span id="632" class="l"><a href="#632">632: </a>            <span class="php-keyword1">return</span> <span class="php-quote">'('</span>.<span class="php-var">$column_name</span>-&gt;text().<span class="php-quote">')'</span>;
 </span><span id="633" class="l"><a href="#633">633: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">is_string</span>(<span class="php-var">$column_name</span>)) {
-</span><span id="634" class="l"><a href="#634">634: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">preg_match</span>(<span class="php-quote">'/^(([A-Z0-9]{1,2})\.)?`?([a-zA-Z0-9_]+)`?(\s(ASC|DESC|asc|desc))?$/'</span>, <span class="php-var">$column_name</span>, <span class="php-var">$match</span>)) {
+</span><span id="634" class="l"><a href="#634">634: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">preg_match</span>(<span class="php-quote">'/^(([A-Z]{1,1}[0-9]{0,1})\.)?`?([a-z0-9_]+)`?(\s(ASC|DESC|asc|desc))?$/'</span>, <span class="php-var">$column_name</span>, <span class="php-var">$match</span>)) {
 </span><span id="635" class="l"><a href="#635">635: </a>                <span class="php-comment">// U.id, U.`id`, U1.id, U1.`id`, field_name, `field_name`</span>
 </span><span id="636" class="l"><a href="#636">636: </a>                <span class="php-keyword1">return</span> (<span class="php-var">$match</span>[<span class="php-num">2</span>] == <span class="php-quote">''</span> ? <span class="php-quote">&quot;`</span><span class="php-var">$match</span><span class="php-quote">[3]`&quot;</span> : <span class="php-quote">&quot;</span><span class="php-var">$match</span><span class="php-quote">[2].`</span><span class="php-var">$match</span><span class="php-quote">[3]`&quot;</span>).(<span class="php-keyword1">empty</span>(<span class="php-var">$match</span>[<span class="php-num">5</span>]) ? <span class="php-quote">''</span> : <span class="php-var">$match</span>[<span class="php-num">4</span>]);
 </span><span id="637" class="l"><a href="#637">637: </a>            } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">preg_match</span>(<span class="php-quote">'/^`?([a-zA-Z0-9_]+)`?\.`?([a-zA-Z0-9_]+)`?(\s(ASC|DESC|asc|desc))?$/'</span>, <span class="php-var">$column_name</span>, <span class="php-var">$match</span>)) {
@@ -988,7 +981,7 @@
 </span><span id="718" class="l"><a href="#718">718: </a>                <span class="php-var">$sql</span> = <span class="php-quote">':'</span>.<span class="php-keyword2">strtolower</span>(<span class="php-keyword2">preg_replace</span>(<span class="php-quote">'/[`\.\s\-_]+/'</span>, <span class="php-quote">''</span>, <span class="php-var">$column_name</span>)).<span class="php-keyword2">count</span>(<span class="php-var">$values</span>);
 </span><span id="719" class="l"><a href="#719">719: </a>                <span class="php-var">$values</span>[<span class="php-var">$sql</span>] = <span class="php-var">$value</span>;
 </span><span id="720" class="l"><a href="#720">720: </a>            } <span class="php-keyword1">else</span> {
-</span><span id="721" class="l"><a href="#721">721: </a>                <span class="php-keyword1">if</span> (<span class="php-keyword2">preg_match</span>(<span class="php-quote">'/^(([A-Z0-9]{1,2})|`([a-zA-Z0-9_]+)`)\.`?([a-zA-Z0-9_]+)`?$/'</span>, <span class="php-var">$value</span>, <span class="php-var">$match</span>)) {
+</span><span id="721" class="l"><a href="#721">721: </a>                <span class="php-keyword1">if</span> (<span class="php-keyword2">preg_match</span>(<span class="php-quote">'/^(([A-Z]{1,1}[0-9]{0,1})|`([a-z0-9_]+)`)\.`?([a-z0-9_]+)`?$/'</span>, <span class="php-var">$value</span>, <span class="php-var">$match</span>)) {
 </span><span id="722" class="l"><a href="#722">722: </a>                    <span class="php-comment">// U.id U.`id` U1.id U1.`id`  `table_name`.`module_id`</span>
 </span><span id="723" class="l"><a href="#723">723: </a>                    <span class="php-var">$sql</span> = <span class="php-var">$match</span>[<span class="php-num">3</span>] == <span class="php-quote">''</span> ? <span class="php-quote">&quot;</span><span class="php-var">$match</span><span class="php-quote">[2].`</span><span class="php-var">$match</span><span class="php-quote">[4]`&quot;</span> : <span class="php-quote">&quot;`</span><span class="php-var">$match</span><span class="php-quote">[3]`.`</span><span class="php-var">$match</span><span class="php-quote">[4]`&quot;</span>;
 </span><span id="724" class="l"><a href="#724">724: </a>                } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">preg_match</span>(<span class="php-quote">'/^([a-zA-Z0-9_]+)\.`([a-zA-Z0-9_]+)`$/'</span>, <span class="php-var">$value</span>, <span class="php-var">$match</span>)) {
@@ -1147,11 +1140,11 @@
 </span><span id="877" class="l"><a href="#877">877: </a></span></code></pre>
 
 	<div id="footer">
-		kotchasan API documentation generated by <a href="http://apigen.org">ApiGen</a>
+		Kotchasan API documentation generated by <a href="http://apigen.org">ApiGen</a>
 	</div>
 </div>
 </div>
 <script src="resources/combined.js?c6c5d4c813dfe94e72641584f94c976e1af856b8"></script>
-<script src="elementlist.js?83ca167cf6dc9413dd38fd3f738f89ec855e1101"></script>
+<script src="elementlist.js?b5dca18886850500697183249f7940bfb08192ef"></script>
 </body>
 </html>

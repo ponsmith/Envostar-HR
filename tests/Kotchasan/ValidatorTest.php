@@ -67,30 +67,4 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
             \Kotchasan\Validator::email('ทดสอบ@localhost')
         );
     }
-
-    /**
-     * Generated from @assert ('0123456789016') [==] true.
-     *
-     * @covers Kotchasan\Validator::idCard
-     */
-    public function testIdCard()
-    {
-
-        $this->assertTrue(
-            \Kotchasan\Validator::idCard('0123456789016')
-        );
-    }
-
-    /**
-     * Generated from @assert ('0123456789015') [==] false.
-     *
-     * @covers Kotchasan\Validator::idCard
-     */
-    public function testIdCard2()
-    {
-
-        $this->assertFalse(
-            \Kotchasan\Validator::idCard('0123456789015')
-        );
-    }
 }

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class Kotchasan\Http\Request | kotchasan</title>
+	<title>Class Kotchasan\Http\Request | Kotchasan</title>
 
 	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
 
@@ -53,11 +53,6 @@
 				<li>
 					<a href="namespace-None.html">
 						None					</a>
-
-						</li>
-				<li>
-					<a href="namespace-PDF.html">
-						PDF					</a>
 
 						</li>
 				<li>
@@ -205,7 +200,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Http.Request.html#13-571" title="Go to source code">Kotchasan/Http/Request.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Http.Request.html#13-577" title="Go to source code">Kotchasan/Http/Request.php</a>
 		<br>
 	</div>
 
@@ -930,18 +925,18 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_request">#</a>
-		<code><a href="source-class-Kotchasan.Http.Request.html#394-407" title="Go to source code">request</a>( <span>string <var>$name</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Http.Request.html#394-413" title="Go to source code">request</a>( <span>string <var>$name</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$cookie</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
-			<p>อ่านค่าจากตัวแปร $_POST $_GET ตามลำดับ
+			<p>อ่านค่าจากตัวแปร $_POST $_GET $_COOKIE(options) ตามลำดับ
 คืนค่ารายการแรกที่พบ ถ้าไม่พบเลยคืนค่า $default
-คืนค่า InputItem หรือ แอเรย์ของ InputItem.</p>
+คืนค่า InputItem หรือ แอเรย์ของ InputItem</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>อ่านค่าจากตัวแปร $_POST $_GET ตามลำดับ
+			<p>อ่านค่าจากตัวแปร $_POST $_GET $_COOKIE(options) ตามลำดับ
 คืนค่ารายการแรกที่พบ ถ้าไม่พบเลยคืนค่า $default
-คืนค่า InputItem หรือ แอเรย์ของ InputItem.</p>
+คืนค่า InputItem หรือ แอเรย์ของ InputItem</p>
 
 
 				<h4>Parameters</h4>
@@ -950,6 +945,8 @@
 					<dd>ชื่อตัวแปร</dd>
 					<dt><var>$default</var></dt>
 					<dd>ค่าเริ่มต้นหากไม่พบตัวแปร</dd>
+					<dt><var>$cookie</var></dt>
+					<dd>false (default) ไม่อ่านจาก cookie, true อ่านจาก cookie ด้วย</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -975,7 +972,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_server">#</a>
-		<code><a href="source-class-Kotchasan.Http.Request.html#409-421" title="Go to source code">server</a>( <span>string <var>$name</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Http.Request.html#415-427" title="Go to source code">server</a>( <span>string <var>$name</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>อ่านค่าจากตัวแปร $_SERVER
@@ -1018,7 +1015,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_session">#</a>
-		<code><a href="source-class-Kotchasan.Http.Request.html#423-436" title="Go to source code">session</a>( <span>string <var>$name</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Http.Request.html#429-442" title="Go to source code">session</a>( <span>string <var>$name</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>อ่านค่าจากตัวแปร $_SESSION
@@ -1063,7 +1060,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setSession">#</a>
-		<code><a href="source-class-Kotchasan.Http.Request.html#438-451" title="Go to source code">setSession</a>( <span>string <var>$name</var></span>, <span>mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Http.Request.html#444-457" title="Go to source code">setSession</a>( <span>string <var>$name</var></span>, <span>mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>กำหนดค่าตัวแปร $_SESSION.</p>
@@ -1104,7 +1101,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withAttribute">#</a>
-		<code><a href="source-class-Kotchasan.Http.Request.html#453-467" title="Go to source code">withAttribute</a>( <span>string <var>$name</var></span>, <span>mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Http.Request.html#459-473" title="Go to source code">withAttribute</a>( <span>string <var>$name</var></span>, <span>mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>กำหนดค่า attributes.</p>
@@ -1145,7 +1142,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withCookieParams">#</a>
-		<code><a href="source-class-Kotchasan.Http.Request.html#469-482" title="Go to source code">withCookieParams</a>( <span>array <var>$cookies</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Http.Request.html#475-488" title="Go to source code">withCookieParams</a>( <span>array <var>$cookies</var></span> )</code>
 
 		<div class="description short">
 			<p>กำหนดค่า cookieParams.</p>
@@ -1184,7 +1181,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withParsedBody">#</a>
-		<code><a href="source-class-Kotchasan.Http.Request.html#484-497" title="Go to source code">withParsedBody</a>( <span>mixed <var>$data</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Http.Request.html#490-503" title="Go to source code">withParsedBody</a>( <span>mixed <var>$data</var></span> )</code>
 
 		<div class="description short">
 			<p>กำหนดค่า parsedBody.</p>
@@ -1223,7 +1220,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withQueryParams">#</a>
-		<code><a href="source-class-Kotchasan.Http.Request.html#499-512" title="Go to source code">withQueryParams</a>( <span>array <var>$query</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Http.Request.html#505-518" title="Go to source code">withQueryParams</a>( <span>array <var>$query</var></span> )</code>
 
 		<div class="description short">
 			<p>กำหนดค่า queryParams.</p>
@@ -1262,7 +1259,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withUploadedFiles">#</a>
-		<code><a href="source-class-Kotchasan.Http.Request.html#514-527" title="Go to source code">withUploadedFiles</a>( <span>array <var>$uploadedFiles</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Http.Request.html#520-533" title="Go to source code">withUploadedFiles</a>( <span>array <var>$uploadedFiles</var></span> )</code>
 
 		<div class="description short">
 			<p>กำหนดค่า uploadedFiles.</p>
@@ -1301,7 +1298,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withoutAttribute">#</a>
-		<code><a href="source-class-Kotchasan.Http.Request.html#529-548" title="Go to source code">withoutAttribute</a>( <span>string|array <var>$names</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Http.Request.html#535-554" title="Go to source code">withoutAttribute</a>( <span>string|array <var>$names</var></span> )</code>
 
 		<div class="description short">
 			<p>ลบ attributes.</p>
@@ -1409,7 +1406,7 @@
 </div>
 
 	<div id="footer">
-		kotchasan API documentation generated by <a href="http://apigen.org">ApiGen</a>
+		Kotchasan API documentation generated by <a href="http://apigen.org">ApiGen</a>
 	</div>
 </div>
 </div>
